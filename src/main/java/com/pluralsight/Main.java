@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +10,14 @@ public class Main {
 
     public static void main(String[] args) {
         ShowScreenHome();
+
+        String input = scanner.nextLine().trim().toUpperCase();
+        if (input.equals("C")){
+            checkInBook();
+        } else if (input.equals("X")) {
+            ShowScreenHome();
+          }
+
     }
 
     //prompt the user for interaction
@@ -58,14 +67,19 @@ public class Main {
 
     private static void ShowScreenAvailableBooks() {
         System.out.println("\nAvailable Books:");
+        String select = scanner.nextLine().trim().toUpperCase();
 
         for (Book book : library) {
             if (!book.isCheckedOut()) {
                 System.out.println(book);
             }
         }
-
-        System.out.println("\nPress Enter to return to the Home Screen...");
+         if (select.equals("Y")){
+            checkOutBook();
+        }
+        System.out.println("\nWould You Like To Checkout A Book? " +
+                            "If Yes Please Select (Y) For Yes");
+        System.out.println("\nX - To Return To The Home Screen");
         scanner.nextLine();
     }
 
@@ -79,7 +93,8 @@ public class Main {
             }
         }
 
-        System.out.println("\nPress Enter to return to the Home Screen...");
+        System.out.println("\nC - To Check In A Book");
+        System.out.println("\nX - To Return To The Home Screen");
         scanner.nextLine();
     }
 
@@ -109,7 +124,7 @@ public class Main {
             System.out.println("Book not found.");
         }
 
-        System.out.println("\nPress Enter to return to the Home Screen...");
+        System.out.println("\nX - To Return To The Home Screen");
         scanner.nextLine();
     }
 
@@ -138,7 +153,7 @@ public class Main {
             System.out.println("Book not found.");
         }
 
-        System.out.println("\nPress Enter to return to the Home Screen...");
+        System.out.println("\nX - To Return To The Home Screen");
         scanner.nextLine();
     }
 

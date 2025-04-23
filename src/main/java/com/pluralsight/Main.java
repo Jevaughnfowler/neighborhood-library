@@ -11,6 +11,8 @@ public class Main {
         ShowScreenHome();
     }
 
+    //prompt the user for interaction
+
     private static void ShowScreenHome() {
         String homeScreenPrompt = "\nWelcome to the library!\n" +
                 "Please select an option from the following:\n" +
@@ -21,6 +23,7 @@ public class Main {
                 "    0 - Exit App\n" +
                 "(1,2,3,4,0): ";
 
+        //This is where the user take action and response ny choose what they would like to do.
         int option;
 
         do {
@@ -51,6 +54,8 @@ public class Main {
         } while (option != 0);
     }
 
+    //this is where we are showing the user options they have available
+
     private static void ShowScreenAvailableBooks() {
         System.out.println("\nAvailable Books:");
 
@@ -64,6 +69,7 @@ public class Main {
         scanner.nextLine();
     }
 
+    // this is where we show the user what books that have been checked out and by who
     private static void ShowScreenCheckedOutBooks() {
         System.out.println("\nChecked Out Books:");
 
@@ -77,6 +83,7 @@ public class Main {
         scanner.nextLine();
     }
 
+    //this is the option the user can choose if they want to, checkOut a book where they would have to enter their names in order to complete the checkout
     private static void checkOutBook() {
         System.out.print("\nEnter the ID of the book you want to check out: ");
         int bookId = scanner.nextInt();
@@ -106,6 +113,8 @@ public class Main {
         scanner.nextLine();
     }
 
+// this is where the user can check in the book back into the library
+
     private static void checkInBook() {
         System.out.print("\nEnter the ID of the book you want to check in: ");
         int bookId = scanner.nextInt();
@@ -132,6 +141,9 @@ public class Main {
         System.out.println("\nPress Enter to return to the Home Screen...");
         scanner.nextLine();
     }
+
+
+//And these are the list of books the user have to choose from.
 
     private static Book[] getPopulatedBooks() {
         Book[] library = new Book[20];

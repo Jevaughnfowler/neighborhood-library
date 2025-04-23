@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+//Assigning values to use in the main
+
 public class Book {
     private int id;
     private String isbn;

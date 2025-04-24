@@ -17,7 +17,7 @@ public class Main {
 // prompting the user for an response
 
     private static void ShowScreenHome() {
-        String homeScreenPrompt = "\nWelcome to the library!\n" +
+        String homeScreenPrompt = "Welcome to the library!\n" +
                 "Please select an option from the following:\n" +
                 "    1 - Show Available Books\n" +
                 "    2 - Show Checked Out Books\n" +
@@ -143,8 +143,6 @@ public class Main {
     }
 
     private static Book[] getPopulatedBooks()  {
-        System.out.println("one line");
-
         try{
 
 

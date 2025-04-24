@@ -1,4 +1,4 @@
-c1|ISBN 978-1612680194|Rich Dad Poor Dad
+1|ISBN 978-1612680194|Rich Dad Poor Dad
 2|ISBN 978-0062315007|The Millionaire Next Door
 3|ISBN 978-0399592522|The Subtle Art of Not Giving a F*ck
 4|ISBN 978-0316334175|The 7 Habits of Highly Effective People

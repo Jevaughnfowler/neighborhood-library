@@ -143,12 +143,13 @@ public class Main {
     }
 
     private static Book[] getPopulatedBooks()  {
+        System.out.println("one line");
 
         try{
-            FileReader fr = new FileReader("books.txt");
-            BufferedReader reader = new BufferedReader(fr);
 
-            Book[] booksTemp = new Book[1000];
+
+            FileReader fr = new FileReader("Books.txt");
+            BufferedReader reader = new BufferedReader(fr);      Book[] booksTemp = new Book[1000];
             int size = 0;
             String dataString;
 
@@ -165,7 +166,10 @@ public class Main {
 
             return booksFinal;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+           // throw new RuntimeException(e);
+
+            System.out.println("there is an error.");
+            return null;
         }
 
     }
@@ -175,38 +179,14 @@ public class Main {
 
         String[] temp = encodedBook.split(Pattern.quote("|"));
 
-        int id = Integer.parseInt(temp[0]);
-        String isbn = temp[1];
-        String title = temp[2];
+        int id = Integer.parseInt(temp[0].trim());
+        String isbn = temp[1].trim();
+        String title = temp[2].trim();
 
         Book result = new Book(id, isbn, title);
         return result;
 
 
-        //    private static Book[] getPopulatedBooks() {
-//        Book[] library = new Book[20];
-//
-//        library[0] = new Book(1, "978-1612680194", "Rich Dad Poor Dad");
-//        library[1] = new Book(2, "978-0062315007", "The Millionaire Next Door");
-//        library[2] = new Book(3, "978-0399592522", "The Subtle Art of Not Giving a F*ck");
-//        library[3] = new Book(4, "978-0316334175", "The 7 Habits of Highly Effective People");
-//        library[4] = new Book(5, "978-1591847786", "Start with Why");
-//        library[5] = new Book(6, "978-1451668381", "Thinking, Fast and Slow");
-//        library[6] = new Book(7, "978-0062315007", "Atomic Habits");
-//        library[7] = new Book(8, "978-1451673515", "How to Win Friends and Influence People");
-//        library[8] = new Book(9, "978-0446547374", "The Lean Startup");
-//        library[9] = new Book(10, "978-0547743031", "Grit: The Power of Passion and Perseverance");
-//        library[10] = new Book(11, "978-0062498533", "The Psychology of Money");
-//        library[11] = new Book(12, "978-0525533183", "The 4-Hour Workweek");
-//        library[12] = new Book(13, "978-1591842248", "Tools of Titans");
-//        library[13] = new Book(14, "978-1250124227", "The Power of Now");
-//        library[14] = new Book(15, "978-1594480003", "Blink: The Power of Thinking Without Thinking");
-//        library[15] = new Book(16, "978-0743273565", "The Intelligent Investor");
-//        library[16] = new Book(17, "978-0385349342", "Shoe Dog");
-//        library[17] = new Book(18, "978-1781256768", "The Little Book of Common Sense Investing");
-//        library[18] = new Book(19, "978-0062212579", "Principles: Life and Work");
-//        library[19] = new Book(20, "978-0062391962", "The Magic of Thinking Big");
-//
-//        return library;
+
     }
 }

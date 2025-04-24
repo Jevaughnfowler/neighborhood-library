@@ -1,13 +1,11 @@
 package com.pluralsight;
 
-//Assigning values to use in the main
-
 public class Book {
     private int id;
     private String isbn;
     private String title;
     private boolean isCheckedOut;
-    private String checkedOutTo; // NEW FIELD
+    private String checkedOutTo;
 
     public Book(int id, String isbn, String title) {
         this.id = id;
@@ -21,12 +19,24 @@ public class Book {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getIsbn() {
         return isbn;
     }
 
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public boolean isCheckedOut() {
@@ -37,22 +47,28 @@ public class Book {
         return checkedOutTo;
     }
 
-    public void checkOut(String name) {
+    public void checkOut(String name){
         this.isCheckedOut = true;
         this.checkedOutTo = name;
     }
 
-    public void checkIn() {
+    public void checkIn(){
         this.isCheckedOut = false;
         this.checkedOutTo = "";
     }
 
-    @Override
-    public String toString() {
-        return "ID: " + id + ", ISBN: " + isbn + ", Title: " + title;
+    public String getFormattedBookText(){
+        //return  "ID: " + this.id + ", Title: " +  this.title  + ", IBSN: " + this.isbn ;
+
+        return String.format("%-5d %-51s %21s", this.id, this.title, this.isbn);
     }
 
-    public String toCheckedOutString() {
-        return toString() + ", Checked out to: " + checkedOutTo;
+    public static String getFormattedBookTextHeader(){
+        return    "ID     TITLE                                              ISBN\n"
+                + "----- --------------------------------------------------- ---------------------";
+    }
+    @Override
+    public String toString(){
+        return getFormattedBookText();
     }
 }
